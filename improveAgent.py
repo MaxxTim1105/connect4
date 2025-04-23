@@ -341,7 +341,7 @@ def main():
     print("Initial valid moves:", len(valid_moves(board)))  # Phải là 7
     solver = Solver()
     current_player = -1
-    depth = 9
+    depth = 8
     print("Human vs AI: You are O, AI is X.")
     print_board(board)
 
@@ -360,7 +360,8 @@ def main():
                 best_score = 100000
                 print("Using Opening Book move!")
             else:
-                best_move, best_score = solver.iterative_deepening(board, 1, depth, 0.1)
+                best_move, best_score = solver.iterative_deepening(board, 1, depth, 2.5
+                                                                  )
                 # Cập nhật Opening Book với chuỗi nước đi hiện tại và nước đi tốt tìm được
                 update_opening_book(moves_history, best_move)
             elapsed = time.time() - start_time
